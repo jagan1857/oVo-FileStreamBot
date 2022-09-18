@@ -8,9 +8,9 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(environ.get("API_ID"))
-    API_HASH = str(environ.get("API_HASH"))
-    BOT_TOKEN = str(environ.get("BOT_TOKEN"))
+    API_ID = int(environ.get("API_ID","13115322"))
+    API_HASH = str(environ.get("API_HASH","1459910748"))
+    BOT_TOKEN = str(environ.get("BOT_TOKEN","5478011283:AAF8wL2dZIeh2p7j-ocz5TtydqowKtRQZ90"))
     SLEEP_THRESHOLD = int(environ.get("SLEEP_THRESHOLD", "60"))  # 1 minute
     WORKERS = int(environ.get("WORKERS", "6"))  # 6 workers = 6 commands at once
     BIN_CHANNEL = int(
@@ -30,7 +30,7 @@ class Var(object):
         ON_HEROKU = False
     FQDN = (
         str(environ.get("FQDN", BIND_ADDRESS))
-        if not ON_HEROKU or environ.get("FQDN")
+        if not ON_HEROKU or environ.get("FQDN", 13.232.68.159)
         else APP_NAME + ".herokuapp.com"
     )
     if ON_HEROKU:
